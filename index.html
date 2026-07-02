@@ -71,13 +71,27 @@
         <a class="project-link" href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
-      <article class="project-card project-card-soon">
+      <article class="project-card">
         <div class="project-card-head">
-          <h3>API Gateway de Integración</h3>
-          <span class="badge badge-soon">Próximamente</span>
+          <h3><a href="https://github.com/jose-oran/provider-gateway" target="_blank" rel="noopener">provider-gateway</a></h3>
+          <span class="badge badge-live">Live</span>
         </div>
-        <p class="lang-es">REST + gRPC sobre el mismo host, contratos Protobuf, resiliencia con Polly (retry / circuit breaker).</p>
-        <p class="lang-en">REST + gRPC on the same host, Protobuf contracts, Polly resilience (retry / circuit breaker).</p>
+        <p class="project-origin">CV: API Gateway de Integración</p>
+        <p class="lang-es">
+          Prototipo que documenta cómo evitar que un proveedor externo caído tire abajo el
+          servicio: REST + gRPC en el mismo host, y resiliencia real con Polly (retry +
+          circuit breaker) probada contra un servidor HTTP real (WireMock.Net) — no una
+          interfaz mockeada. Incluye una mejora deliberada sobre el patrón de producción
+          (que no tiene circuit breaker ni lo testea) y explica el trade-off que acepto.
+        </p>
+        <p class="lang-en">
+          A prototype documenting how to keep a flaky external provider from taking the
+          whole service down: REST + gRPC on the same host, and real Polly resilience
+          (retry + circuit breaker) proven against a real HTTP server (WireMock.Net) — not
+          a mocked interface. Includes a deliberate improvement over the production pattern
+          (which has no circuit breaker and never tests it) and the trade-off I accept.
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/provider-gateway" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
       <article class="project-card project-card-soon">
