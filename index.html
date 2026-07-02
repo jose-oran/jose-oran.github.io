@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jose Oran — Backend / Cloud Engineer</title>
+  <meta name="description" content="Backend engineer focused on distributed systems: Clean Architecture, DDD, Dapr-based microservices, and concurrency control." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Jose Oran</h1>
+      <p class="tagline">Backend / Cloud Engineer</p>
+      <p class="tagline-sub">.NET · Microservicios · Arquitectura distribuida</p>
+      <p class="tagline-sub tagline-en">.NET · Microservices · Distributed systems</p>
+      <nav class="links">
+        <a href="https://github.com/jose-oran" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/innualiler-jos%C3%A9-or%C3%A1n-vasquez-525a0737/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <p class="lang-es">
+        Desarrollador backend con foco en sistemas distribuidos: Clean Architecture, DDD,
+        microservicios con Dapr, y control de concurrencia en escenarios reales de alto
+        tráfico (plataformas transaccionales). Actualmente en búsqueda de nuevas
+        oportunidades.
+      </p>
+      <p class="lang-en">
+        Backend engineer focused on distributed systems: Clean Architecture, DDD,
+        Dapr-based microservices, and concurrency control in real high-traffic
+        transactional platforms. Currently open to new opportunities.
+      </p>
+    </section>
+
+    <section class="featured">
+      <h2>Proyecto destacado / Featured project</h2>
+      <article class="project-card">
+        <h3><a href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">reservation-system</a></h3>
+        <p class="lang-es">
+          Prototipo que documenta cómo resolver <em>double-booking</em> bajo concurrencia
+          con un lock distribuido sobre Redis (patrón actor), probado con un test de
+          integración real (10 requests concurrentes, Testcontainers) — no una demo, sino
+          el razonamiento completo: problema, opciones consideradas, decisión, trade-offs.
+        </p>
+        <p class="lang-en">
+          A prototype documenting how to prevent double-booking under concurrency using a
+          Redis-backed distributed lock (actor pattern), proven with a real integration
+          test (10 concurrent requests, Testcontainers) — not a demo, the full reasoning:
+          problem, options considered, decision, trade-offs.
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">Ver repo →</a>
+      </article>
+    </section>
+
+    <section class="stack">
+      <h2>Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-item">
+          <h4>Backend</h4>
+          <p>C# · .NET 8/10 · ASP.NET Core · gRPC · Clean Architecture · DDD · CQRS</p>
+        </div>
+        <div class="stack-item">
+          <h4>Microservicios</h4>
+          <p>Dapr (service invocation, pub/sub, state store) · Event Sourcing (EventStoreDB) · SignalR</p>
+        </div>
+        <div class="stack-item">
+          <h4>Datos</h4>
+          <p>MongoDB · Redis · SQL Server · PostgreSQL</p>
+        </div>
+        <div class="stack-item">
+          <h4>Testing</h4>
+          <p>xUnit · NSubstitute · Testcontainers · Playwright</p>
+        </div>
+        <div class="stack-item">
+          <h4>Infra / DevOps</h4>
+          <p>Docker · Kubernetes · Helm · Kustomize · ArgoCD · Jenkins</p>
+        </div>
+        <div class="stack-item">
+          <h4>Frontend</h4>
+          <p>Angular · TypeScript</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <a href="https://github.com/jose-oran" target="_blank" rel="noopener">GitHub</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/innualiler-jos%C3%A9-or%C3%A1n-vasquez-525a0737/" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+</body>
+</html>
