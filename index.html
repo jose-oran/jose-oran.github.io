@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jose Oran — Backend / Cloud Engineer</title>
-  <meta name="description" content="Backend engineer focused on distributed systems: Clean Architecture, DDD, Dapr-based microservices, and concurrency control." />
+  <title>Jose Oran — Software Development Team Lead · Tech Lead</title>
+  <meta name="description" content="Technical lead with 12+ years in software engineering, delivering event-driven distributed platforms with .NET, Dapr, Apache Pulsar and Kubernetes." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <h1>Jose Oran</h1>
-      <p class="tagline">Backend / Cloud Engineer</p>
-      <p class="tagline-sub">.NET · Microservicios · Arquitectura distribuida</p>
-      <p class="tagline-sub tagline-en">.NET · Microservices · Distributed systems</p>
+      <p class="tagline">Software Development Team Lead · Tech Lead</p>
+      <p class="tagline-sub">.NET · Microservicios · Arquitectura distribuida event-driven</p>
+      <p class="tagline-sub tagline-en">.NET · Microservices · Event-driven distributed architecture</p>
       <nav class="links">
         <a href="https://github.com/jose-oran" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/innualiler-jos%C3%A9-or%C3%A1n-vasquez-525a0737/" target="_blank" rel="noopener">LinkedIn</a>
@@ -24,22 +24,38 @@
   <main class="container">
     <section class="about">
       <p class="lang-es">
-        Desarrollador backend con foco en sistemas distribuidos: Clean Architecture, DDD,
-        microservicios con Dapr, y control de concurrencia en escenarios reales de alto
-        tráfico (plataformas transaccionales). Actualmente en búsqueda de nuevas
-        oportunidades.
+        Líder técnico con 12+ años en ingeniería de software y 6+ liderando equipos
+        internacionales, entregando plataformas distribuidas orientadas a eventos con
+        .NET, Dapr, Apache Pulsar y Kubernetes. Clean Architecture, DDD, CQRS y Event
+        Sourcing combinados con GitOps y comunicación clara hacia stakeholders.
+        Actualmente en búsqueda de nuevas oportunidades.
       </p>
       <p class="lang-en">
-        Backend engineer focused on distributed systems: Clean Architecture, DDD,
-        Dapr-based microservices, and concurrency control in real high-traffic
-        transactional platforms. Currently open to new opportunities.
+        Technical lead with 12+ years in software engineering and 6+ leading
+        international teams, delivering event-driven distributed platforms with .NET,
+        Dapr, Apache Pulsar and Kubernetes. Clean Architecture, DDD, CQRS and Event
+        Sourcing combined with GitOps and clear stakeholder communication. Currently
+        open to new opportunities.
       </p>
     </section>
 
     <section class="featured">
-      <h2>Proyecto destacado / Featured project</h2>
+      <h2>Proyectos de referencia / Reference projects</h2>
+      <p class="section-note lang-es">
+        Cada uno replica, con un dominio no confidencial, un problema real que resolví en
+        producción — mismo patrón, mismo nivel de profundidad, sin código de cliente.
+      </p>
+      <p class="section-note lang-en">
+        Each one replicates, with a non-confidential domain, a real problem I solved in
+        production — same pattern, same depth, no client code.
+      </p>
+
       <article class="project-card">
-        <h3><a href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">reservation-system</a></h3>
+        <div class="project-card-head">
+          <h3><a href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">reservation-system</a></h3>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <p class="project-origin">CV: Plataforma de Concursos en Tiempo Real</p>
         <p class="lang-es">
           Prototipo que documenta cómo resolver <em>double-booking</em> bajo concurrencia
           con un lock distribuido sobre Redis (patrón actor), probado con un test de
@@ -53,6 +69,51 @@
           problem, options considered, decision, trade-offs.
         </p>
         <a class="project-link" href="https://github.com/jose-oran/reservation-system" target="_blank" rel="noopener">Ver repo →</a>
+      </article>
+
+      <article class="project-card project-card-soon">
+        <div class="project-card-head">
+          <h3>API Gateway de Integración</h3>
+          <span class="badge badge-soon">Próximamente</span>
+        </div>
+        <p class="lang-es">REST + gRPC sobre el mismo host, contratos Protobuf, resiliencia con Polly (retry / circuit breaker).</p>
+        <p class="lang-en">REST + gRPC on the same host, Protobuf contracts, Polly resilience (retry / circuit breaker).</p>
+      </article>
+
+      <article class="project-card project-card-soon">
+        <div class="project-card-head">
+          <h3>Catálogo de Eventos con Event Sourcing</h3>
+          <span class="badge badge-soon">Próximamente</span>
+        </div>
+        <p class="lang-es">Ciclo de vida persistido como streams en EventStoreDB, proyecciones, MongoDB change streams invalidando caché en Redis.</p>
+        <p class="lang-en">Lifecycle persisted as EventStoreDB streams, projections, MongoDB change streams invalidating Redis cache.</p>
+      </article>
+
+      <article class="project-card project-card-soon">
+        <div class="project-card-head">
+          <h3>Modernización de Change Data Capture</h3>
+          <span class="badge badge-soon">Próximamente</span>
+        </div>
+        <p class="lang-es">De CDC por polling (1 pod/tabla) a CDC log-based centralizado — eliminando el polling por completo.</p>
+        <p class="lang-en">From polling-based CDC (1 pod/table) to centralized log-based CDC — removing polling entirely.</p>
+      </article>
+
+      <article class="project-card project-card-soon">
+        <div class="project-card-head">
+          <h3>Testing Guiado por Contratos</h3>
+          <span class="badge badge-soon">Próximamente</span>
+        </div>
+        <p class="lang-es">Un contrato JSON como única fuente de verdad, generando fixtures de backend, handlers MSW de frontend y specs de Playwright.</p>
+        <p class="lang-en">A single JSON contract as source of truth, generating backend fixtures, frontend MSW handlers, and Playwright specs.</p>
+      </article>
+
+      <article class="project-card project-card-soon">
+        <div class="project-card-head">
+          <h3>Pipeline CI/CD GitOps</h3>
+          <span class="badge badge-soon">Próximamente</span>
+        </div>
+        <p class="lang-es">Jenkins con Testcontainers y cobertura obligatoria; despliegue declarativo con ArgoCD, sync waves y entornos de preview.</p>
+        <p class="lang-en">Jenkins with Testcontainers and mandatory coverage; declarative deployment with ArgoCD, sync waves, and preview environments.</p>
       </article>
     </section>
 
