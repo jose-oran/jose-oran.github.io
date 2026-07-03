@@ -37,10 +37,10 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 8px 16px;
-    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border: 1px solid var(--glass-border);
     border-radius: 999px;
-    background: transparent;
+    background: var(--glass-bg);
     color: var(--text-muted);
     font-size: 0.9rem;
     font-family: inherit;
@@ -49,8 +49,8 @@
   }
 
   .lang-toggle:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
+    border-color: var(--violet);
+    transform: translateY(-2px);
   }
 
   .lang-toggle span {
@@ -58,11 +58,11 @@
   }
 
   .lang-toggle-sep {
-    color: var(--border-hover);
+    color: var(--glass-border-hover);
   }
 
   .lang-toggle span.active {
-    color: var(--accent);
+    color: var(--violet);
     font-weight: 700;
   }
 </style>

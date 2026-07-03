@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Bilingual from "../components/Bilingual.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import StackGrid from "../components/StackGrid.astro";
 import ScrollReveal from "../components/ScrollReveal.svelte";
 import { projects } from "../content/projects";
+import { stack } from "../content/stack";
 ---
 
 <BaseLayout
@@ -17,23 +17,48 @@ import { projects } from "../content/projects";
   <main class="container">
     <ScrollReveal client:load>
       <section class="about">
-        <Bilingual
-          es="Líder técnico con 12+ años en ingeniería de software y 6+ liderando equipos
-            internacionales, entregando plataformas distribuidas orientadas a eventos con
-            .NET, Dapr, Apache Pulsar y Kubernetes. Clean Architecture, DDD, CQRS y Event
-            Sourcing combinados con GitOps y comunicación clara hacia stakeholders.
-            Actualmente en búsqueda de nuevas oportunidades."
-          en="Technical lead with 12+ years in software engineering and 6+ leading
-            international teams, delivering event-driven distributed platforms with .NET,
-            Dapr, Apache Pulsar and Kubernetes. Clean Architecture, DDD, CQRS and Event
-            Sourcing combined with GitOps and clear stakeholder communication. Currently
-            open to new opportunities."
-        />
+        <p class="kicker">Perfil / Profile</p>
+        <div class="bento-grid">
+          <div class="glass bento-tile bento-about">
+            <Bilingual
+              es="Líder técnico con 12+ años en ingeniería de software y 6+ liderando equipos
+                internacionales, entregando plataformas distribuidas orientadas a eventos con
+                .NET, Dapr, Apache Pulsar y Kubernetes. Clean Architecture, DDD, CQRS y Event
+                Sourcing combinados con GitOps y comunicación clara hacia stakeholders.
+                Actualmente en búsqueda de nuevas oportunidades."
+              en="Technical lead with 12+ years in software engineering and 6+ leading
+                international teams, delivering event-driven distributed platforms with .NET,
+                Dapr, Apache Pulsar and Kubernetes. Clean Architecture, DDD, CQRS and Event
+                Sourcing combined with GitOps and clear stakeholder communication. Currently
+                open to new opportunities."
+            />
+          </div>
+
+          <div class="glass bento-tile bento-stat">
+            <p class="stat-number gradient-text">12+</p>
+            <p class="stat-label">años de experiencia / years of experience</p>
+          </div>
+
+          <div class="glass bento-tile bento-stat">
+            <p class="stat-number gradient-text">6/6</p>
+            <p class="stat-label">prototipos publicados / prototypes published</p>
+          </div>
+
+          {
+            stack.map((item) => (
+              <div class="glass bento-tile bento-stack">
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))
+          }
+        </div>
       </section>
     </ScrollReveal>
 
     <ScrollReveal client:load>
       <section class="featured">
+        <p class="kicker">Proyectos / Projects</p>
         <h2>Proyectos de referencia / Reference projects</h2>
         <Bilingual
           class="section-note"
@@ -43,14 +68,9 @@ import { projects } from "../content/projects";
             production — same pattern, same depth, no client code."
         />
 
-        {projects.map((project) => <ProjectCard project={project} />)}
-      </section>
-    </ScrollReveal>
-
-    <ScrollReveal client:load>
-      <section class="stack">
-        <h2>Stack</h2>
-        <StackGrid />
+        <div class="project-grid">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
       </section>
     </ScrollReveal>
   </main>

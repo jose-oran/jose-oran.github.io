@@ -1,5 +1,9 @@
----
-const items = [
+export interface StackCategory {
+  title: string;
+  desc: string;
+}
+
+export const stack: StackCategory[] = [
   { title: "Backend", desc: "C# · .NET 8/10 · ASP.NET Core · gRPC · Clean Architecture · DDD · CQRS" },
   { title: "Microservicios", desc: "Dapr (service invocation, pub/sub, state store) · Event Sourcing (EventStoreDB) · SignalR" },
   { title: "Datos", desc: "MongoDB · Redis · SQL Server · PostgreSQL" },
@@ -7,15 +11,3 @@ const items = [
   { title: "Infra / DevOps", desc: "Docker · Kubernetes · Helm · Kustomize · ArgoCD · Jenkins" },
   { title: "Frontend", desc: "Angular · TypeScript" },
 ];
----
-
-<div class="stack-grid">
-  {
-    items.map((item) => (
-      <div class="stack-item">
-        <h4>{item.title}</h4>
-        <p>{item.desc}</p>
-      </div>
-    ))
-  }
-</div>
