@@ -1,17 +1,25 @@
 :root {
   --bg: #0d1117;
   --bg-elevated: #161b22;
+  --bg-elevated-hover: #1c2129;
   --border: #30363d;
+  --border-hover: #3d444d;
   --text: #e6edf3;
   --text-muted: #8b949e;
   --accent: #58a6ff;
   --accent-soft: #1f6feb;
+  --accent-glow: rgba(88, 166, 255, 0.35);
   --radius: 10px;
-  --max-width: 760px;
+  --max-width: 800px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
@@ -31,20 +39,46 @@ body {
 /* Hero */
 
 .hero {
-  padding: 72px 0 48px;
+  position: relative;
+  padding: 88px 0 56px;
   text-align: center;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--accent-glow) 0%,
+    transparent 60%
+  );
+  opacity: 0.25;
+  animation: drift 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(-6%, -4%) scale(1);
+  }
+  to {
+    transform: translate(6%, 4%) scale(1.15);
+  }
 }
 
 .hero h1 {
-  margin: 0 0 8px;
-  font-size: 2.25rem;
+  margin: 0 0 10px;
+  font-size: clamp(2.25rem, 5vw, 3rem);
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .tagline {
-  margin: 0 0 4px;
-  font-size: 1.125rem;
+  margin: 0 0 6px;
+  font-size: 1.2rem;
   color: var(--accent);
   font-weight: 600;
 }
@@ -55,15 +89,12 @@ body {
   font-size: 0.95rem;
 }
 
-.tagline-en {
-  font-style: italic;
-}
-
 .links {
-  margin-top: 24px;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
   gap: 12px;
+  position: relative;
 }
 
 .links a {
@@ -73,26 +104,38 @@ body {
   color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
 .links a:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-1px);
 }
 
 /* Sections */
 
 main {
-  padding: 48px 24px 24px;
+  padding: 56px 24px 24px;
 }
 
 section {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 16px;
   border-left: 3px solid var(--accent-soft);
   padding-left: 12px;
@@ -100,12 +143,6 @@ h2 {
 
 .about p {
   margin: 0 0 12px;
-}
-
-.lang-en {
-  color: var(--text-muted);
-  font-style: italic;
-  font-size: 0.95rem;
 }
 
 /* Featured project */
@@ -120,8 +157,16 @@ h2 {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px 24px;
+  padding: 22px 24px;
   margin-bottom: 16px;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  background: var(--bg-elevated-hover);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(88, 166, 255, 0.08);
 }
 
 .project-card-head {
@@ -135,10 +180,6 @@ h2 {
 .project-card h3 {
   margin: 0 0 12px;
   font-size: 1.1rem;
-}
-
-.project-card-soon h3 {
-  color: var(--text-muted);
 }
 
 .project-origin {
@@ -162,6 +203,11 @@ h2 {
   margin-top: 8px;
   font-weight: 600;
   text-decoration: none;
+  transition: transform 0.2s var(--ease);
+}
+
+.project-link:hover {
+  transform: translateX(3px);
 }
 
 .badge {
@@ -179,12 +225,6 @@ h2 {
   border: 1px solid rgba(63, 185, 80, 0.4);
 }
 
-.badge-soon {
-  background: rgba(139, 148, 158, 0.15);
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-}
-
 /* Stack */
 
 .stack-grid {
@@ -198,6 +238,12 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 16px;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.stack-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
 }
 
 .stack-item h4 {
@@ -235,12 +281,27 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.75rem;
-  }
-
   .links {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project-card,
+  .stack-item,
+  .links a,
+  .project-link {
+    transition: none;
   }
 }

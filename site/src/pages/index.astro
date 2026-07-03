@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Bilingual from "../components/Bilingual.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import StackGrid from "../components/StackGrid.astro";
+import ScrollReveal from "../components/ScrollReveal.svelte";
+import { projects } from "../content/projects";
+---
+
+<BaseLayout
+  title="Jose Oran — Software Development Team Lead · Tech Lead"
+  description="Technical lead with 12+ years in software engineering, delivering event-driven distributed platforms with .NET, Dapr, Apache Pulsar and Kubernetes."
+>
+  <Hero />
+
+  <main class="container">
+    <ScrollReveal client:load>
+      <section class="about">
+        <Bilingual
+          es="Líder técnico con 12+ años en ingeniería de software y 6+ liderando equipos
+            internacionales, entregando plataformas distribuidas orientadas a eventos con
+            .NET, Dapr, Apache Pulsar y Kubernetes. Clean Architecture, DDD, CQRS y Event
+            Sourcing combinados con GitOps y comunicación clara hacia stakeholders.
+            Actualmente en búsqueda de nuevas oportunidades."
+          en="Technical lead with 12+ years in software engineering and 6+ leading
+            international teams, delivering event-driven distributed platforms with .NET,
+            Dapr, Apache Pulsar and Kubernetes. Clean Architecture, DDD, CQRS and Event
+            Sourcing combined with GitOps and clear stakeholder communication. Currently
+            open to new opportunities."
+        />
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal client:load>
+      <section class="featured">
+        <h2>Proyectos de referencia / Reference projects</h2>
+        <Bilingual
+          class="section-note"
+          es="Cada uno replica, con un dominio no confidencial, un problema real que resolví en
+            producción — mismo patrón, mismo nivel de profundidad, sin código de cliente."
+          en="Each one replicates, with a non-confidential domain, a real problem I solved in
+            production — same pattern, same depth, no client code."
+        />
+
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </section>
+    </ScrollReveal>
+
+    <ScrollReveal client:load>
+      <section class="stack">
+        <h2>Stack</h2>
+        <StackGrid />
+      </section>
+    </ScrollReveal>
+  </main>
+
+  <footer class="container">
+    <a href="https://github.com/jose-oran" target="_blank" rel="noopener">GitHub</a>
+    <span class="sep">·</span>
+    <a
+      href="https://www.linkedin.com/in/innualiler-jos%C3%A9-or%C3%A1n-vasquez-525a0737/"
+      target="_blank"
+      rel="noopener">LinkedIn</a
+    >
+  </footer>
+</BaseLayout>

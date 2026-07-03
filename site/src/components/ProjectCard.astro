@@ -1,0 +1,21 @@
+---
+import Bilingual from "./Bilingual.astro";
+import type { Project } from "../content/projects";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const repoUrl = `https://github.com/jose-oran/${project.repo}`;
+---
+
+<article class="project-card">
+  <div class="project-card-head">
+    <h3><a href={repoUrl} target="_blank" rel="noopener">{project.repo}</a></h3>
+    {project.live && <span class="badge badge-live">Live</span>}
+  </div>
+  <p class="project-origin">{project.cvName}</p>
+  <Bilingual es={project.es} en={project.en} />
+  <a class="project-link" href={repoUrl} target="_blank" rel="noopener">Ver repo →</a>
+</article>

@@ -1,0 +1,25 @@
+---
+import Bilingual from "./Bilingual.astro";
+import LangToggle from "./LangToggle.svelte";
+---
+
+<header class="hero">
+  <div class="container">
+    <h1>Jose Oran</h1>
+    <p class="tagline">Software Development Team Lead · Tech Lead</p>
+    <Bilingual
+      class="tagline-sub"
+      es=".NET · Microservicios · Arquitectura distribuida event-driven"
+      en=".NET · Microservices · Event-driven distributed architecture"
+    />
+    <nav class="links">
+      <a href="https://github.com/jose-oran" target="_blank" rel="noopener">GitHub</a>
+      <a
+        href="https://www.linkedin.com/in/innualiler-jos%C3%A9-or%C3%A1n-vasquez-525a0737/"
+        target="_blank"
+        rel="noopener">LinkedIn</a
+      >
+      <LangToggle client:load />
+    </nav>
+  </div>
+</header>

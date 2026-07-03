@@ -1,0 +1,32 @@
+---
+interface Props {
+  es: string;
+  en: string;
+  class?: string;
+}
+
+const { es, en, class: className } = Astro.props;
+---
+
+<div class="lang-swap">
+  <p class:list={["lang-es", className]} set:html={es} />
+  <p class:list={["lang-en", className]} set:html={en} />
+</div>
+
+<style>
+  .lang-swap {
+    display: grid;
+  }
+
+  .lang-swap > p {
+    grid-area: 1 / 1;
+    transition: opacity 0.3s var(--ease);
+  }
+
+  :global([data-lang="es"]) .lang-swap > .lang-en,
+  :global([data-lang="en"]) .lang-swap > .lang-es {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+</style>
