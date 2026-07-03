@@ -94,13 +94,29 @@
         <a class="project-link" href="https://github.com/jose-oran/provider-gateway" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
-      <article class="project-card project-card-soon">
+      <article class="project-card">
         <div class="project-card-head">
-          <h3>Catálogo de Eventos con Event Sourcing</h3>
-          <span class="badge badge-soon">Próximamente</span>
+          <h3><a href="https://github.com/jose-oran/event-catalog" target="_blank" rel="noopener">event-catalog</a></h3>
+          <span class="badge badge-live">Live</span>
         </div>
-        <p class="lang-es">Ciclo de vida persistido como streams en EventStoreDB, proyecciones, MongoDB change streams invalidando caché en Redis.</p>
-        <p class="lang-en">Lifecycle persisted as EventStoreDB streams, projections, MongoDB change streams invalidating Redis cache.</p>
+        <p class="project-origin">CV: Catálogo de Eventos con Event Sourcing</p>
+        <p class="lang-es">
+          Prototipo que documenta Event Sourcing real: reconstrucción de estado por replay
+          puro sobre EventStoreDB, una proyección real (catch-up subscription) manteniendo
+          un read model en MongoDB, y un worker de invalidación de caché disparado por
+          MongoDB change streams que borra solo la key afectada en Redis. Construido como la
+          versión completa que el sistema de producción dejó a medio camino — documentado
+          con total honestidad en el README.
+        </p>
+        <p class="lang-en">
+          A prototype documenting real Event Sourcing: state rebuilt by pure replay over
+          EventStoreDB, a real projection (catch-up subscription) keeping a MongoDB read
+          model in sync, and a cache invalidation worker triggered by MongoDB change
+          streams that deletes only the affected Redis key. Built as the complete version
+          the production system left half-implemented — documented with full honesty in
+          the README.
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/event-catalog" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
       <article class="project-card project-card-soon">
