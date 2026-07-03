@@ -146,13 +146,33 @@
         <a class="project-link" href="https://github.com/jose-oran/cdc-modernization" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
-      <article class="project-card project-card-soon">
+      <article class="project-card">
         <div class="project-card-head">
-          <h3>Testing Guiado por Contratos</h3>
-          <span class="badge badge-soon">Próximamente</span>
+          <h3><a href="https://github.com/jose-oran/contract-driven-testing" target="_blank" rel="noopener">contract-driven-testing</a></h3>
+          <span class="badge badge-live">Live</span>
         </div>
-        <p class="lang-es">Un contrato JSON como única fuente de verdad, generando fixtures de backend, handlers MSW de frontend y specs de Playwright.</p>
-        <p class="lang-en">A single JSON contract as source of truth, generating backend fixtures, frontend MSW handlers, and Playwright specs.</p>
+        <p class="project-origin">CV: Testing Guiado por Contratos</p>
+        <p class="lang-es">
+          Prototipo que documenta un contrato JSON como única fuente de verdad, generando
+          fixtures de backend (.NET), handlers MSW de frontend y fixtures de Playwright — con
+          una diferencia clave: cada salida generada se prueba <em>ejecutándola de verdad</em>
+          (el C# compila con `dotnet build` real, los handlers MSW corren contra un `fetch`
+          real, el fixture de Playwright se importa dinámicamente), no solo inspeccionando el
+          texto generado. Incluye hallazgos reales del sistema que inspiró esto: un servidor
+          mock con rutas registradas a mano, handlers MSW generados pero nunca conectados a la
+          app, y un bug de `baseURL` evidenciado en logs de producción.
+        </p>
+        <p class="lang-en">
+          A prototype documenting a JSON contract as the single source of truth, generating
+          backend (.NET) fixtures, frontend MSW handlers, and Playwright fixtures — with one
+          key difference: every generated output is proven by <em>actually running it</em>
+          (the C# compiles with a real `dotnet build`, the MSW handlers run against a real
+          `fetch`, the Playwright fixture is dynamically imported), not just inspecting the
+          generated text. Includes real findings from the system that inspired it: a mock
+          server with hand-registered routes, generated MSW handlers never wired into the
+          app, and a `baseURL` bug evidenced in production logs.
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/contract-driven-testing" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
       <article class="project-card project-card-soon">
