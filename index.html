@@ -175,13 +175,37 @@
         <a class="project-link" href="https://github.com/jose-oran/contract-driven-testing" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
-      <article class="project-card project-card-soon">
+      <article class="project-card">
         <div class="project-card-head">
-          <h3>Pipeline CI/CD GitOps</h3>
-          <span class="badge badge-soon">Próximamente</span>
+          <h3><a href="https://github.com/jose-oran/gitops-pipeline" target="_blank" rel="noopener">gitops-pipeline</a></h3>
+          <span class="badge badge-live">Live</span>
         </div>
-        <p class="lang-es">Jenkins con Testcontainers y cobertura obligatoria; despliegue declarativo con ArgoCD, sync waves y entornos de preview.</p>
-        <p class="lang-en">Jenkins with Testcontainers and mandatory coverage; declarative deployment with ArgoCD, sync waves, and preview environments.</p>
+        <p class="project-origin">CV: Pipeline CI/CD GitOps</p>
+        <p class="lang-es">
+          Prototipo que documenta gates de CI/CD que <em>realmente</em> bloquean, no reportes
+          que nadie hace cumplir. El sistema real que lo inspiró valida el CHANGELOG antes de
+          publicar, pero solo genera un reporte de cobertura sin ningún umbral que falle el
+          build, y las "sync waves" de ArgoCD que promete el CV no existen en ningún manifiesto
+          real. Acá se construyen las piezas que faltan: un umbral de cobertura que corta el
+          build de verdad (probado shelleando `dotnet test` contra dos fixtures gemelas — la
+          bien testeada pasa, la sub-testeada falla, comparando el código de salida real del
+          proceso), sync waves genuinas y verificables sobre manifiestos de Kustomize reales, y
+          el cierre del lazo entre CI y CD: el propio pipeline de GitHub Actions bumpea el tag
+          de imagen y lo commitea de vuelta al repo, sin paso manual.
+        </p>
+        <p class="lang-en">
+          A prototype documenting CI/CD gates that <em>actually</em> block, not reports nobody
+          enforces. The real system that inspired it validates the CHANGELOG before publishing,
+          but only generates a coverage report with no threshold that fails the build, and the
+          ArgoCD "sync waves" the CV promises don't exist in any real manifest. This builds the
+          missing pieces: a coverage threshold that genuinely fails the build (proven by
+          shelling out to `dotnet test` against two twin fixtures — the well-tested one passes,
+          the under-tested one fails, comparing the real process exit code), genuine and
+          verifiable sync waves over real Kustomize manifests, and closing the loop between CI
+          and CD: the GitHub Actions pipeline itself bumps the image tag and commits it back to
+          the repo, with no manual step.
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/gitops-pipeline" target="_blank" rel="noopener">Ver repo →</a>
       </article>
     </section>
 
