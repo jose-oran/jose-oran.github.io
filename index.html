@@ -119,13 +119,31 @@
         <a class="project-link" href="https://github.com/jose-oran/event-catalog" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
-      <article class="project-card project-card-soon">
+      <article class="project-card">
         <div class="project-card-head">
-          <h3>Modernización de Change Data Capture</h3>
-          <span class="badge badge-soon">Próximamente</span>
+          <h3><a href="https://github.com/jose-oran/cdc-modernization" target="_blank" rel="noopener">cdc-modernization</a></h3>
+          <span class="badge badge-live">Live</span>
         </div>
-        <p class="lang-es">De CDC por polling (1 pod/tabla) a CDC log-based centralizado — eliminando el polling por completo.</p>
-        <p class="lang-en">From polling-based CDC (1 pod/table) to centralized log-based CDC — removing polling entirely.</p>
+        <p class="project-origin">CV: Modernización de Change Data Capture</p>
+        <p class="lang-es">
+          Prototipo que documenta una modernización real de CDC: de N procesos con su propia
+          conexión de polling a SQL Server, a una captura log-based compartida (SQL Server +
+          Debezium reales) que múltiples equipos consumen sin multiplicar conexiones —
+          probado contra `sys.dm_exec_sessions` real, no una explicación arquitectónica.
+          Incluye una corrección honesta: el beneficio medido es consolidación de conexiones,
+          no velocidad (los propios docs del POC real tenían números de latencia
+          inconsistentes entre sí).
+        </p>
+        <p class="lang-en">
+          A prototype documenting a real CDC modernization: from N processes each holding
+          their own polling connection to SQL Server, to a shared log-based capture (real
+          SQL Server + Debezium) that multiple teams consume without multiplying
+          connections — proven against real `sys.dm_exec_sessions`, not an architectural
+          diagram. Includes an honest correction: the measured benefit is connection
+          consolidation, not speed (the real POC's own docs reported inconsistent latency
+          numbers).
+        </p>
+        <a class="project-link" href="https://github.com/jose-oran/cdc-modernization" target="_blank" rel="noopener">Ver repo →</a>
       </article>
 
       <article class="project-card project-card-soon">
