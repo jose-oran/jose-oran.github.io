@@ -2,6 +2,8 @@ export interface Project {
   repo: string;
   cvName: string;
   live: boolean;
+  /** True for exploratory proof-of-concept work, not a replica of an already-solved production problem. */
+  poc?: boolean;
   es: string;
   en: string;
 }
@@ -116,5 +118,27 @@ export const projects: Project[] = [
       verifiable sync waves over real Kustomize manifests, and closing the loop between CI
       and CD: the GitHub Actions pipeline itself bumps the image tag and commits it back to
       the repo, with no manual step.`,
+  },
+  {
+    repo: "foundry-hosted-agent-dotnet",
+    cvName: "PoC: Agente de IA Hosteado",
+    live: true,
+    poc: true,
+    es: `Prueba de concepto para implementar, desde cero, un agente de IA hosteado — framework
+      de agentes y protocolo de conversación con estado en .NET — como nueva iniciativa para
+      evaluar cómo mejorar la integración de capacidades de IA a futuro. Documenta la
+      fricción real de llevar esto a producción: en la suscripción de prueba solo un modelo
+      tenía cuota real disponible, la autenticación se resolvió sin keys mediante identidad
+      administrada del proveedor cloud, y el permiso para invocar el agente no lo resolvían
+      los roles de IAM a nivel de recurso — hizo falta agregarse como usuario del proyecto
+      desde el propio portal de administración del proveedor.`,
+    en: `A proof of concept to implement, from scratch, a hosted AI agent — an agent framework
+      and a stateful conversation protocol in .NET — as a new initiative to evaluate how to
+      improve AI capability integration going forward. It documents the real friction of
+      getting this into production: on the test subscription only one model had real quota
+      available, authentication was solved keylessly via the cloud provider's managed
+      identity, and the permission to invoke the agent wasn't solved by resource-level IAM
+      roles alone — it took adding yourself as a project user from the provider's own admin
+      portal.`,
   },
 ];

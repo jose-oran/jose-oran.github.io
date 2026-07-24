@@ -367,6 +367,12 @@ h2 {
   border: 1px solid rgba(52, 211, 153, 0.4);
 }
 
+.badge-poc {
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--cyan);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+}
+
 /* Footer */
 
 footer {
